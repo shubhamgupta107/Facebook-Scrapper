@@ -18,11 +18,11 @@ chessL      =    ['Chess Classes']
 singingL    =    ['Singing Classes']
 storyL      =    ['Story Telling']
 
-# cities = ['Mumbai, Maharashtra', 'Bangalore, India', 'Delhi, India', 'Kolkata', 'Chennai, India']
+cities = ['Mumbai, Maharashtra', 'Bangalore, India', 'Delhi, India', 'Kolkata', 'Chennai, India']
 # danceL = ['Western Dance Academy India']
 # danceL = []
 # yogaL = []
-cities = ['Bangalore, India']
+# cities = ['Bangalore, India']
 types = {'dance' : danceL, 'yoga': yogaL, 'foreignLanguage': foreignL, 'chess': chessL, 'singing': singingL, 'story': storyL}
 # types = {'dance' : danceL, 'yoga': yogaL}
 driver.get('https://www.facebook.com')

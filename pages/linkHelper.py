@@ -51,8 +51,9 @@ def processLink(url, driver):
     except:
         location = None
     if(peopleFollow is not None):
-        if(peopleFollow[0:3] == 'http'):
+        if(peopleFollow[0:4] == 'http'):
             website = peopleFollow
+            peopleFollow = None
     if(phoneNo is not None):
         if(phoneNo[0] < '0' or phoneNo[0] > '9'):
             phoneNo = None

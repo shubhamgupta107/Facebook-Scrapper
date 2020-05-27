@@ -24,7 +24,7 @@ storyL      =    ['Story Telling']
 # yogaL = []
 cities = ['Bangalore, India']
 types = {'dance' : danceL, 'yoga': yogaL, 'foreignLanguage': foreignL, 'chess': chessL, 'singing': singingL, 'story': storyL}
-
+# types = {'dance' : danceL, 'yoga': yogaL}
 driver.get('https://www.facebook.com')
 time.sleep(20) # Enter username and password
 
@@ -39,16 +39,19 @@ for city in cities:
             url = 'https://www.facebook.com/search/pages/?q=' + toSearch
             driver.get(url)
             time.sleep(2)
-            pageButton = driver.find_element_by_xpath("//*[contains(text(), 'Pages')]")
-            pageButton.click()
-            time.sleep(2)
-            locationBox = driver.find_element_by_xpath("//*[contains(text(), 'Location')]")
-            locationBox.click()
-            inpBox = driver.find_elements_by_tag_name('input')
-            box = inpBox[1].send_keys(city)
-            time.sleep(3)
-            suggestionBox = driver.find_element_by_xpath("//*[contains(text(), '" + city + "')]")
-            suggestionBox.click()
+            try:
+                pageButton = driver.find_element_by_xpath("//*[contains(text(), 'Pages')]")
+                pageButton.click()
+                time.sleep(2)
+                locationBox = driver.find_element_by_xpath("//*[contains(text(), 'Location')]")
+                locationBox.click()
+                inpBox = driver.find_elements_by_tag_name('input')
+                box = inpBox[1].send_keys(city)
+                time.sleep(4)
+                suggestionBox = driver.find_element_by_xpath("//*[contains(text(), '" + city + "')]")
+                suggestionBox.click()
+            except:
+                continue
             for i in range(10):
                 driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
                 time.sleep(1)
